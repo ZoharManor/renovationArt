@@ -7,6 +7,8 @@ import {
   Check, ArrowLeft
 } from 'lucide-react'
 
+const base = import.meta.env.BASE_URL
+
 /* ─── Animation Variants ─── */
 const fadeInUp = {
   hidden: { opacity: 0, y: 40 },
@@ -251,14 +253,14 @@ export default function App() {
       title: 'שיפוץ דירת 4 חדרים — רמת גן',
       tags: ['95 מ"ר', 'שיפוץ כללי'],
       type: 'beforeAfter',
-      beforeImg: '/before.jpg',
-      afterImg: '/after.jpg',
+      beforeImg: `${base}before.jpg`,
+      afterImg: `${base}after.jpg`,
     },
     {
       title: 'חידוש מטבח מודרני — תל אביב',
       tags: ['מטבח 18 מ"ר', 'שיפוץ מטבח'],
       type: 'single',
-      img: '/kitchen.jpg',
+      img: `${base}kitchen.jpg`,
       imgPos: 'center 70%',
     },
     {
@@ -271,7 +273,7 @@ export default function App() {
       title: 'עיצוב סלון מודרני — פתח תקווה',
       tags: ['110 מ"ר', 'סלון'],
       type: 'single',
-      img: '/livingRoom.jpeg',
+      img: `${base}livingRoom.jpeg`,
     },
   ]
 
@@ -1485,7 +1487,7 @@ export default function App() {
 
       {/* ═══ HERO ═══ */}
       <div className="hero-bg">
-      <video className="hero-bg-video" autoPlay muted loop playsInline src="/hero-bg.mp4" />
+      <video className="hero-bg-video" autoPlay muted loop playsInline src={`${base}hero-bg.mp4`} />
       <div className="hero">
         <div className="hero-content">
           <motion.div

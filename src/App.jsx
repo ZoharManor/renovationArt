@@ -1103,7 +1103,7 @@ export default function App() {
           color: #5a5040;
         }
 
-        /* ═══ RESPONSIVE ═══ */
+        /* ═══ RESPONSIVE — TABLET ═══ */
         @media (max-width: 968px) {
           .nav-links, .nav-cta-desktop { display: none !important; }
           .nav-hamburger { display: block; }
@@ -1111,27 +1111,28 @@ export default function App() {
 
           .hero {
             flex-direction: column;
-            padding: 100px 20px 40px;
-            gap: 40px;
+            padding: 100px 24px 48px;
+            gap: 36px;
           }
-          .hero h1 { font-size: 40px; }
+          .hero h1 { font-size: 42px; }
           .hero-subtitle { font-size: 17px; }
           .hero-stats { gap: 24px; }
           .hero-stat-num { font-size: 32px; }
           .hero-content { order: 1; }
-          .hero-form-col { order: 2; width: 100%; }
+          .hero-form-col { order: 2; width: 100%; max-width: 500px; }
 
-          .section { padding: 60px 20px; }
-          .section-title { font-size: 28px; }
+          .section { padding: 64px 24px; }
+          .section-title { font-size: 30px; }
+          .section-subtitle { font-size: 15px; }
 
-          .services-grid { grid-template-columns: 1fr; }
+          .services-grid { grid-template-columns: repeat(2, 1fr); gap: 16px; }
           .gallery-grid { grid-template-columns: 1fr; }
-          .why-grid { grid-template-columns: 1fr; }
+          .why-grid { grid-template-columns: repeat(2, 1fr); gap: 16px; }
 
-          .process-wrap { padding: 60px 20px; }
+          .process-wrap { padding: 64px 24px; }
           .process-timeline {
             flex-direction: column;
-            gap: 32px;
+            gap: 28px;
           }
           .process-timeline::before {
             top: 0;
@@ -1148,19 +1149,134 @@ export default function App() {
           .process-step p { max-width: none; margin: 0; }
           .process-step-text { text-align: right; }
 
-          .test-card { flex: 0 0 85%; }
+          .test-card { flex: 0 0 80%; min-width: 280px; }
 
-          .cta-strip { padding: 48px 20px; }
+          .cta-strip { padding: 56px 24px; }
           .cta-strip h2 { font-size: 28px; }
 
-          .footer-inner { grid-template-columns: 1fr; gap: 32px; }
+          .footer { padding: 48px 24px 24px; }
+          .footer-inner { grid-template-columns: 1fr 1fr; gap: 32px; }
         }
 
-        @media (max-width: 480px) {
-          .hero h1 { font-size: 32px; }
-          .hero-stats { flex-direction: column; gap: 16px; align-items: flex-start; }
-          .trust-signals { flex-direction: column; }
-          .modal-body { padding: 24px 18px; }
+        /* ═══ RESPONSIVE — MOBILE ═══ */
+        @media (max-width: 640px) {
+          .navbar { height: 56px; }
+          .nav-logo-title { font-size: 16px; }
+          .nav-logo-sub { font-size: 10px; }
+
+          .hero {
+            padding: 80px 16px 36px;
+            gap: 28px;
+          }
+          .hero h1 { font-size: 32px; line-height: 1.25; }
+          .hero-badge { font-size: 12px; padding: 6px 14px; }
+          .hero-subtitle { font-size: 15px; line-height: 1.7; }
+          .hero-stats {
+            flex-wrap: wrap;
+            gap: 16px;
+            justify-content: center;
+          }
+          .hero-stat {
+            min-width: 90px;
+            text-align: center;
+          }
+          .hero-stat-num { font-size: 28px; }
+          .hero-stat-label { font-size: 12px; }
+          .hero-content { text-align: center; }
+          .hero-form-col { max-width: 100%; }
+
+          .form-card { padding: 24px 16px; }
+          .form-card h3 { font-size: 20px; }
+          .form-submit { padding: 14px; font-size: 15px; }
+          .whatsapp-btn { padding: 12px; font-size: 14px; }
+          .trust-signals {
+            flex-direction: column;
+            gap: 6px;
+            align-items: center;
+            font-size: 12px;
+          }
+
+          .section { padding: 48px 16px; }
+          .section-title { font-size: 26px; margin-bottom: 8px; }
+          .section-subtitle { font-size: 14px; margin-bottom: 32px; }
+
+          .services-grid { grid-template-columns: 1fr; gap: 12px; }
+          .service-card { padding: 20px; }
+          .service-card h3 { font-size: 17px; }
+          .service-card p { font-size: 13px; }
+          .service-link { font-size: 13px; }
+
+          .gallery-grid { grid-template-columns: 1fr; gap: 16px; }
+          .ba-container { height: 220px; }
+          .gallery-info { padding: 16px; }
+          .gallery-info h3 { font-size: 15px; }
+
+          .process-wrap { padding: 48px 16px; }
+          .process-timeline { gap: 24px; }
+          .process-num { width: 52px; height: 52px; font-size: 16px; }
+          .process-step h3 { font-size: 16px; }
+          .process-step p { font-size: 13px; }
+
+          .why-grid { grid-template-columns: 1fr; gap: 12px; }
+          .why-card { padding: 20px; }
+          .why-card h3 { font-size: 16px; }
+          .why-card p { font-size: 13px; }
+
+          .test-card {
+            flex: 0 0 88%;
+            min-width: 260px;
+            padding: 24px 20px;
+          }
+          .test-quote-mark { font-size: 42px; margin-bottom: 10px; }
+          .test-text { font-size: 14px; line-height: 1.7; }
+          .test-author { font-size: 14px; }
+          .test-meta { font-size: 12px; }
+
+          .cta-strip { padding: 40px 16px; }
+          .cta-strip h2 { font-size: 24px; }
+          .cta-strip p { font-size: 15px; margin-bottom: 24px; }
+          .cta-buttons { flex-direction: column; gap: 12px; }
+          .cta-btn {
+            justify-content: center;
+            padding: 14px 24px;
+            font-size: 15px;
+            border-radius: 8px;
+            width: 100%;
+          }
+
+          .footer { padding: 40px 16px 20px; }
+          .footer-inner { grid-template-columns: 1fr; gap: 24px; }
+          .footer-logo-title { font-size: 20px; }
+          .footer-tagline { font-size: 13px; max-width: 100%; }
+          .footer h4 { font-size: 14px; margin-bottom: 12px; }
+          .footer li { font-size: 13px; }
+          .footer-bottom { font-size: 11px; margin-top: 24px; }
+
+          .scroll-indicator { display: none; }
+        }
+
+        /* ═══ RESPONSIVE — SMALL PHONES ═══ */
+        @media (max-width: 380px) {
+          .hero h1 { font-size: 27px; }
+          .hero-badge { font-size: 11px; padding: 5px 12px; }
+          .hero-subtitle { font-size: 14px; }
+          .hero-stats { gap: 12px; }
+          .hero-stat-num { font-size: 24px; }
+
+          .form-card { padding: 20px 14px; }
+          .form-card h3 { font-size: 18px; }
+
+          .section-title { font-size: 23px; }
+          .service-card { padding: 16px; }
+
+          .test-card { flex: 0 0 92%; min-width: 240px; padding: 20px 16px; }
+
+          .cta-strip h2 { font-size: 22px; }
+          .cta-btn { font-size: 14px; padding: 12px 20px; }
+
+          .modal-body { padding: 20px 14px; }
+          .modal-body h2 { font-size: 22px; }
+          .faq-question { font-size: 14px; padding: 14px 16px; }
         }
 
         /* ═══ SERVICE MODAL ═══ */
@@ -1356,6 +1472,22 @@ export default function App() {
           .modal-body { padding: 24px 24px 32px; }
           .modal-body h2 { font-size: 24px; }
           .modal-cta-row { flex-direction: column; }
+        }
+        @media (max-width: 640px) {
+          .modal-backdrop { padding: 10px; align-items: flex-end; }
+          .modal-container {
+            max-height: 90vh;
+            border-radius: 16px 16px 0 0;
+          }
+          .modal-hero-img { height: 180px; }
+          .modal-body { padding: 20px 18px 28px; }
+          .modal-body h2 { font-size: 22px; margin-bottom: 16px; }
+          .modal-body p { font-size: 14px; }
+          .modal-icon-wrap { width: 48px; height: 48px; }
+          .modal-close { width: 36px; height: 36px; margin: 12px; }
+          .faq-question { font-size: 14px; padding: 14px 16px; }
+          .faq-answer-inner { font-size: 13px; padding: 0 16px 14px; }
+          .modal-cta-btn { padding: 13px 16px; font-size: 14px; border-radius: 10px; }
         }
       `}</style>
 
